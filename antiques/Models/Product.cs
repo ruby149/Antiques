@@ -14,12 +14,13 @@ namespace antiques.Models
 
         public int ProductID { get; set; }
         public double Price { get; set; }
-        public double Size { get; set; }
+       
 
         public string Description { get; set; }
         public string Item { get; set; }
-        public int CategoryID { get; set; }
+        public int Category_ID { get; set; }
         public int User_id { get; set; }
+        public IEnumerable<Category>Categories {get; set;}
 
 
     }

@@ -1,0 +1,94 @@
+﻿@model Product
+<br />
+<h2 class="text-info">Create new Product</h2>
+<br />
+
+@using (Html.BeginForm("InsertProductToDatabase", "Product", "Post"))
+{
+    <input asp-for="ProductID" type="hidden" value="" />
+    <label asp-for="Price" class="control-label">Price</label>
+    <input type="number" name="Price" class="form-control" value="" />
+    <label asp-for="Description" class="control-label">Description</label>
+    <input type="text" name="Description" class="form-control" />
+    <label asp-for="Item" class="control-label">Item</label>
+    <input type="text" name="Item" class="form-control" />
+    <label asp-for="User_id" class="control-label">User_id</label>
+    <input type="number" name="User_id" class="form-control" />
+    <div class="form-group">
+        <label for="">Select a Category</label>
+        <select class="form-control" name="Category_ID" value="">
+            @foreach (var cat in Model.Categories)
+            {
+                <option value="@cat.CategoryID">@cat.CategoryID @cat.Name</option>
+            }
+        </select>
+    </div>
+    <input type="submit" value="Create Product" class="btn btn-primary" />
+}
+
+@*
+      <div class="border container" style="padding:30px">
+        @using (Html.BeginForm("InsertProductToDatabase", "Product", "Post"))
+        {
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Price"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Price" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Description"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Description" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="Item"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="Item" class="form-control" />
+                </div>
+            </div>
+
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="User_id"></label>
+                </div>
+                <div class="col-6">
+                    <input asp-for="User_id" class="form-control" />
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="CategoryID"></label>
+                </div>
+                <div class="col-6">
+                    <select>
+                        @foreach (var cat in Model.Categories)
+                        {
+                            <option value="@cat.CategoryID">@cat.CategoryID @cat.Name </option>
+                        }
+                    </select>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-3 offset-4">
+                    <input type="submit" value="Create" class="btn btn-primary form-control" />
+                </div>
+                <div class="col-3">
+                    <a href="/Product/Index" class="btn btn-success form-control">Back to List</a>
+                </div>
+            </div>
+        }
+    </div>
+
+
+*@
+
+

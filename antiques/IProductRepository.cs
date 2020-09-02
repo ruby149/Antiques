@@ -11,7 +11,18 @@ namespace antiques
     {
         public IEnumerable<Product> GetAllProducts();
         public Product GetProduct(int productID);
+        public IEnumerable<Category>GetAllCategories();
+        
+        public Product AssignCategory();
+        
         public void UpdateProduct(Product product);
+
+        public void CreateProduct(Product product);
+
+        public void EditProduct(Product product);
+
+        public void DeleteProduct(Product Product);
+       
     }
 
 }

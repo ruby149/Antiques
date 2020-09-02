@@ -28,9 +28,10 @@ namespace antiques
         {
             services.AddScoped<IDbConnection>((s) =>
             {
-                IDbConnection conn = new MySqlConnection(Configuration.GetConnectionString("antique"));
-                conn.Open();
-                return conn;
+                
+                IDbConnection _conn = new MySqlConnection(Configuration.GetConnectionString("antique"));
+                _conn.Open();
+                return _conn;
             });
 
             services.AddTransient<IProductRepository, ProductRepository>();
